@@ -1,0 +1,229 @@
+/* Variáveis de Cores */
+:root {
+    --color-primary: #6B46C1;
+    --color-secondary: #E879F9;
+    --color-button: #4C1D95;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Cabeçalho estilo Nestor */
+.nestor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.nestor-header h1 {
+    color: var(--color-primary);
+    font-family: sans-serif;
+    font-size: 28px;
+    margin: 0;
+}
+
+.nestor-header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
+
+.auth-buttons .btn-signup {
+    background-color: transparent;
+    border: 1px solid var(--color-button);
+    color: var(--color-button);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.auth-buttons .btn-signin {
+    background-color: var(--color-button);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Seção de Busca */
+.search-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.search-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.search-section p {
+    font-size: 1.2em;
+    color: #717171;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1em;
+}
+
+.search-bar button {
+    padding: 15px 20px;
+    background-color: var(--color-button);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Categorias */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.category-card {
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    width: 250px;
+}
+
+.category-card.restaurant {
+    background-color: var(--color-primary);
+}
+
+.category-card.market {
+    background-color: var(--color-secondary);
+}
+
+.category-card h3 {
+    margin: 0 0 10px 0;
+}
+
+.category-card a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Cardápio "Nestor Food" */
+main {
+    padding: 20px;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.menu-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.menu-item h3 {
+    margin: 10px 0;
+}
+
+.menu-item p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.price {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Rodapé estilo Nestor */
+.nestor-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #f2f2f2;
+    border-top: 1px solid #ddd;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    color: #717171;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+/* Botão de Pânico (Quick Exit) */
+#panic-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-button);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#panic-button:hover {
+    background-color: #d01723;
+}

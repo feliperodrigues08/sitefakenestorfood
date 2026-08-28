@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nestor Food - Delivery de Comida</title>
+    <link rel="stylesheet" href="style.css">
+</head><body>
+    <header class="nestor-header">
+        <h1>Nestor Food</h1>
+        <nav>
+            <a href="#">Entregador</a>
+            <a href="#">Restaurante e Mercado</a>
+            <a href="#">Carreiras</a>
+            <a href="#">Cartão</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn-signup">Criar conta</button>
+            <button class="btn-signin">Entrar</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h2>Tudo pra facilitar seu dia a dia</h2>
+            <p>O que você precisa está aqui. Peça e receba onde estiver.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Endereço de entrega e número">
+                <button>Buscar</button>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="category-card restaurant">
+                <h3>Restaurante</h3>
+                <a href="#">Ver opções</a>
+            </div>
+            <div class="category-card market">
+                <h3>Mercado</h3>
+                <a href="#">Buscar lojas</a>
+            </div>
+        </section>
+
+        <section class="menu">
+            <h2>Lanches</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="./img/l1.jpg" alt="Hambúrguer Clássico">
+                    <h3>Hambúrguer Clássico</h3>
+                    <p>Pão, carne, queijo, alface e tomate.</p>
+                    <span class="price">R$ 15,00</span>
+                </div>
+                <div class="menu-item" id="trigger1">
+                    <img src="./img/l2.jpg" alt="X-Tudo Especial">
+                    <h3>X-Tudo Especial da Casa</h3>
+                    <p>O favorito da galera, completo e saboroso.</p>
+                    <span class="price">R$ 25,00</span>
+                </div>
+                <div class="menu-item">
+                    <img src="./img/l3.jpg" alt="Misto Quente">
+                    <h3>Misto Quente</h3>
+                    <p>Pão, queijo e presunto na chapa.</p>
+                    <span class="price">R$ 8,00</span>
+                </div>
+                <div class="menu-item" id="trigger2">
+                    <img src="./img/l4.jpg" alt="Burger Artesanal">
+                    <h3>Lanchão Premium</h3>
+                    <p>Ingredientes selecionados para um sabor único.</p>
+                    <span class="price">R$ 28,00</span>
+                </div>
+                <div class="menu-item">
+                    <img src="./img/l5.jpg" alt="Bauru">
+                    <h3>Lanche bom</h3>
+                    <p>Pão francês, rosbife, queijo e tomate.</p>
+                    <span class="price">R$ 12,00</span>
+                </div>
+                <div class="menu-item" id="trigger3">
+                    <img src="./img/l6.jpg" alt="Combo Família">
+                    <h3>Combo Família Feliz</h3>
+                    <p>Perfeito para compartilhar com quem você ama.</p>
+                    <span class="price">R$ 50,00</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="nestor-footer">
+        <div class="footer-column">
+            <h2>Nestor Food</h2>
+            <a href="#">Site Institucional</a>
+            <a href="#">Fale Conosco</a>
+            <a href="#" id="security-link">Conta e Segurança</a>
+            <a href="#">Carreiras</a>
+        </div>
+        <div class="footer-column">
+            <h2>Descubra</h2>
+            <a href="#">Cadastre seu Restaurante</a>
+            <a href="#">Shop</a>
+            <a href="#">Empresas</a>
+        </div>
+        <div class="footer-column">
+            <h2>Social</h2>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <button id="panic-button">Ver Carrinho</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
