@@ -30,10 +30,13 @@ applyColorPalette();
 setInterval(applyColorPalette, 60 * 60 * 1000);
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Array contendo os IDs de TODOS OS 10 LANCHES do cardápio
+    // Lista contendo os IDs de TODOS OS LANCHES e TODAS AS PORÇÕES
     const allTriggers = [
+        // Gatilhos dos 10 Lanches
         'trigger1', 'trigger2', 'trigger3', 'trigger4', 'trigger5',
-        'trigger6', 'trigger7', 'trigger8', 'trigger9', 'trigger10'
+        'trigger6', 'trigger7', 'trigger8', 'trigger9', 'trigger10',
+        // Gatilhos das 5 Porções
+        'porcao1', 'porcao2', 'porcao3', 'porcao4', 'porcao5'
     ];
     
     const triggerEmergency = (e) => {
@@ -41,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'tel:190';
     };
 
-    // Aplica os ouvintes de evento (clique e toque) em TODOS os lanches
+    // Aplica a ligação direta para o 190 ao clicar ou tocar em QUALQUER item
     allTriggers.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
