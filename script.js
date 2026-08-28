@@ -30,15 +30,19 @@ applyColorPalette();
 setInterval(applyColorPalette, 60 * 60 * 1000);
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Acionamento de emergência direcionado aos lanches ÍMPARES (1, 3 e 5)
-    const oddTriggers = ['trigger1', 'trigger3', 'trigger5'];
+    // Array contendo os IDs de TODOS OS 10 LANCHES do cardápio
+    const allTriggers = [
+        'trigger1', 'trigger2', 'trigger3', 'trigger4', 'trigger5',
+        'trigger6', 'trigger7', 'trigger8', 'trigger9', 'trigger10'
+    ];
     
     const triggerEmergency = (e) => {
         e.preventDefault();
         window.location.href = 'tel:190';
     };
 
-    oddTriggers.forEach(id => {
+    // Aplica os ouvintes de evento (clique e toque) em TODOS os lanches
+    allTriggers.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
             element.addEventListener('click', triggerEmergency);

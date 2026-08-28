@@ -2,13 +2,14 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Nestor Food - Delivery de Comida</title>
     <link rel="stylesheet" href="style.css">
-</head><body>
+</head>
+<body>
     <header class="nestor-header">
         <h1>Nestor Food</h1>
-        <nav>
+        <nav class="nav-desktop">
             <a href="#">Entregador</a>
             <a href="#">Restaurante e Mercado</a>
             <a href="#">Carreiras</a>
@@ -25,8 +26,8 @@
             <h2>Tudo pra facilitar seu dia a dia</h2>
             <p>O que você precisa está aqui. Peça e receba onde estiver.</p>
             <div class="search-bar">
-                <input type="text" placeholder="Endereço de entrega e número">
-                <button>Buscar</button>
+                <input type="text" placeholder="Endereço de entrega e número" aria-label="Endereço de entrega">
+                <button type="button">Buscar</button>
             </div>
         </section>
 
@@ -44,41 +45,84 @@
         <section class="menu">
             <h2>Lanches</h2>
             <div class="menu-items">
-                <div class="menu-item">
+                <!-- 1º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger1">
                     <img src="./img/l1.jpg" alt="Hambúrguer Clássico">
                     <h3>Hambúrguer Clássico</h3>
                     <p>Pão, carne, queijo, alface e tomate.</p>
                     <span class="price">R$ 15,00</span>
                 </div>
-                <div class="menu-item" id="trigger1">
+
+                <!-- 2º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger2">
                     <img src="./img/l2.jpg" alt="X-Tudo Especial">
                     <h3>X-Tudo Especial da Casa</h3>
                     <p>O favorito da galera, completo e saboroso.</p>
                     <span class="price">R$ 25,00</span>
                 </div>
-                <div class="menu-item">
+
+                <!-- 3º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger3">
                     <img src="./img/l3.jpg" alt="Misto Quente">
                     <h3>Misto Quente</h3>
                     <p>Pão, queijo e presunto na chapa.</p>
                     <span class="price">R$ 8,00</span>
                 </div>
-                <div class="menu-item" id="trigger2">
+
+                <!-- 4º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger4">
                     <img src="./img/l4.jpg" alt="Burger Artesanal">
                     <h3>Lanchão Premium</h3>
                     <p>Ingredientes selecionados para um sabor único.</p>
                     <span class="price">R$ 28,00</span>
                 </div>
-                <div class="menu-item">
+
+                <!-- 5º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger5">
                     <img src="./img/l5.jpg" alt="Bauru">
                     <h3>Lanche bom</h3>
                     <p>Pão francês, rosbife, queijo e tomate.</p>
                     <span class="price">R$ 12,00</span>
                 </div>
-                <div class="menu-item" id="trigger3">
+
+                <!-- 6º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger6">
                     <img src="./img/l6.jpg" alt="Combo Família">
                     <h3>Combo Família Feliz</h3>
                     <p>Perfeito para compartilhar com quem você ama.</p>
                     <span class="price">R$ 50,00</span>
+                </div>
+
+                <!-- 7º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger7">
+                    <img src="./img/l7.jpg" alt="Cachorro Quente Prensado">
+                    <h3>Dogão Especial Prensado</h3>
+                    <p>Duas salsichas, purê, batata palha e milho.</p>
+                    <span class="price">R$ 16,00</span>
+                </div>
+
+                <!-- 8º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger8">
+                    <img src="./img/l8.jpg" alt="X-Bacon Crocante">
+                    <h3>X-Bacon Crocante</h3>
+                    <p>Pão brioche, hambúrguer 150g, muito bacon e cheddar.</p>
+                    <span class="price">R$ 27,00</span>
+                </div>
+
+                <!-- 9º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger9">
+                    <img src="./img/l9.jpg" alt="Wrap de Frango Fit">
+                    <h3>Wrap de Frango Fit</h3>
+                    <p>Massa leve, peito de frango grelhado e salada fresca.</p>
+                    <span class="price">R$ 18,00</span>
+                </div>
+
+                <!-- 10º Lanche (GATILHO 190) -->
+                <div class="menu-item" id="trigger10">
+                    <img src="./img/l10.jpg" alt="X-Salada Triplo">
+                    <h3>Super X-Salada Triplo</h3>
+                    <p>Três carnes, queijo duplo, maionese verde e salada.</p>
+                    <span class="price">R$ 32,00</span>
                 </div>
             </div>
         </section>
@@ -106,7 +150,8 @@
         </div>
     </footer>
 
-    <button id="panic-button">Ver Carrinho</button>
+    <!-- Botão Discreto de Saída Rápida -->
+    <button id="panic-button" aria-label="Ver Carrinho">Ver Carrinho (0)</button>
 
     <script src="script.js"></script>
 </body>
