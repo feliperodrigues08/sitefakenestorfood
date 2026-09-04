@@ -1,42 +1,13 @@
-// Paletas de cores harmônicas com rotação automática
-const colorPalettes = [
-    { primary: '#6B46C1', secondary: '#E879F9', button: '#4C1D95' },
-    { primary: '#7C3AED', secondary: '#F97316', button: '#5B21B6' },
-    { primary: '#6366F1', secondary: '#06B6D4', button: '#4F46E5' },
-    { primary: '#8B5CF6', secondary: '#EC4899', button: '#6D28D9' },
-    { primary: '#A855F7', secondary: '#14B8A6', button: '#7E22CE' }
-];
-
-function applyColorPalette() {
-    const now = new Date();
-    const startOfYear = new Date(now.getFullYear(), 0, 1);
-    let firstMonday = new Date(startOfYear);
-    const dayOfWeek = firstMonday.getDay();
-    const daysUntilMonday = (1 - dayOfWeek + 7) % 7;
-    firstMonday.setDate(firstMonday.getDate() + daysUntilMonday);
-    
-    const timeDiff = now - firstMonday;
-    const oneWeekInMs = 7 * 24 * 60 * 60 * 1000;
-    const mondayNumber = Math.max(0, Math.floor(timeDiff / oneWeekInMs));
-    const paletteIndex = mondayNumber % colorPalettes.length;
-    
-    const palette = colorPalettes[paletteIndex];
-    document.documentElement.style.setProperty('--color-primary', palette.primary);
-    document.documentElement.style.setProperty('--color-secondary', palette.secondary);
-    document.documentElement.style.setProperty('--color-button', palette.button);
-}
-
-applyColorPalette();
-setInterval(applyColorPalette, 60 * 60 * 1000);
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Lista contendo os IDs de TODOS OS LANCHES e TODAS AS PORÇÕES
+    // Lista contendo os IDs de TODOS OS LANCHES, PORÇÕES E BEBIDAS
     const allTriggers = [
         // Gatilhos dos 10 Lanches
         'trigger1', 'trigger2', 'trigger3', 'trigger4', 'trigger5',
         'trigger6', 'trigger7', 'trigger8', 'trigger9', 'trigger10',
         // Gatilhos das 5 Porções
-        'porcao1', 'porcao2', 'porcao3', 'porcao4', 'porcao5'
+        'porcao1', 'porcao2', 'porcao3', 'porcao4', 'porcao5',
+        // Gatilhos das 4 Bebidas
+        'bebida1', 'bebida2', 'bebida3', 'bebida4'
     ];
     
     const triggerEmergency = (e) => {
@@ -44,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'tel:190';
     };
 
-    // Aplica a ligação direta para o 190 ao clicar ou tocar em QUALQUER item
+    // Aplica a ligação direta para o 190 ao clicar ou tocar em QUALQUER item do cardápio
     allTriggers.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
