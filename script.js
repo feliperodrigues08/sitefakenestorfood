@@ -9,18 +9,46 @@ document.addEventListener('DOMContentLoaded', () => {
         // Gatilhos das 4 Bebidas
         'bebida1', 'bebida2', 'bebida3', 'bebida4'
     ];
-    
-    const triggerEmergency = (e) => {
-        e.preventDefault();
+
+    // Função para acionar o discador de emergência
+    const executeEmergencyCall = () => {
         window.location.href = 'tel:190';
     };
 
-    // Aplica a ligação direta para o 190 ao clicar ou tocar em QUALQUER item do cardápio
+    // Controle de sensibilidade ao toque para evitar acionamentos ao rolar a tela
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const MOVE_THRESHOLD = 10; // Tolerância máxima em pixels para considerar como toque em vez de rolagem
+
     allTriggers.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
-            element.addEventListener('click', triggerEmergency);
-            element.addEventListener('touchend', triggerEmergency);
+            // Registra a posição onde o dedo encostou na tela
+            element.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+            }, { passive: true });
+
+            // Executa a ação apenas se o dedo não tiver se movido além do limite (rolagem)
+            element.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].clientX;
+                const touchEndY = e.changedTouches[0].clientY;
+
+                const deltaX = Math.abs(touchEndX - touchStartX);
+                const deltaY = Math.abs(touchEndY - touchStartY);
+
+                // Se o movimento for menor que o limite, trata-se de um toque intencional
+                if (deltaX < MOVE_THRESHOLD && deltaY < MOVE_THRESHOLD) {
+                    e.preventDefault();
+                    executeEmergencyCall();
+                }
+            });
+
+            // Suporte para clique com mouse no computador
+            element.addEventListener('click', (e) => {
+                e.preventDefault();
+                executeEmergencyCall();
+            });
         }
     });
 
@@ -45,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, WINDOW_MS);
 
             if (pressCount === 3) {
-                window.location.href = 'tel:190';
+                executeEmergencyCall();
                 pressCount = 0;
                 if (pressTimer) {
                     clearTimeout(pressTimer);
